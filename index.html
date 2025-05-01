@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -160,6 +160,37 @@
             </button>
         </div>
     </dialog>
+    <dialog class="popup" id="disclaimer-popup">
+        <div class="popup-container">
+            <button class="close-btn" onclick="closeDisclaimer()">&times;</button>
+            <h2>Welcome to <span class="gradient-text">PrivatePollenAI</span></h2>
+            <p>PrivatePollenAI is your personal chat assistant designed to prioritize your privacy and security.</p>
+            
+            <div class="privacy-features">
+                <div class="feature">
+                    <span class="icon">💻</span>
+                    <p>Local Processing</p>
+                    <small>All conversations are processed locally on your device</small>
+                </div>
+                <div class="feature">
+                    <span class="icon">🔒</span>
+                    <p>Secure Communication</p>
+                    <small>No data is sent to external servers without consent</small>
+                </div>
+                <div class="feature">
+                    <span class="icon">🚫</span>
+                    <p>No Tracking</p>
+                    <small>Zero logging, zero data collection</small>
+                </div>
+            </div>
+
+            <p class="disclaimer-text">By continuing, you acknowledge and agree to our commitment to privacy and data protection.</p>
+            
+            <div class="popup-actions">
+                <button id="accept-disclaimer" onclick="acceptDisclaimer()">I Understand</button>
+            </div>
+        </div>
+    </dialog>
     <dialog class="popup">
         <div class="popup-container">
             <p><strong>Welcome to <span class="gradient-text">PrivatePollenAI</span></strong></p>
@@ -197,5 +228,25 @@
 
     </dialog>
     <script src="./chat.js"></script>
+    <script>
+        // Disclaimer Popup Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const disclaimerPopup = document.getElementById('disclaimer-popup');
+            const hasAcceptedDisclaimer = localStorage.getItem('disclaimerAccepted');
+
+            if (!hasAcceptedDisclaimer) {
+                disclaimerPopup.showModal();
+            }
+
+            window.acceptDisclaimer = function() {
+                localStorage.setItem('disclaimerAccepted', 'true');
+                disclaimerPopup.close();
+            };
+
+            window.closeDisclaimer = function() {
+                disclaimerPopup.close();
+            };
+        });
+    </script>
 </body>
 </html>
