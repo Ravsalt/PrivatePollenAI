@@ -63,33 +63,42 @@
                     <!-- Text Generation Model -->
                     <div style="display:flex; align-items: center; width:100%; margin-bottom: 20px;">
                         <h3 style="flex-grow:1; text-align: center; position: relative; left:15px;">Choose Text Model</h3>
-                        <button style="border: none; border-radius: 30px; background-color: white; width: 20px; height: 20px; cursor:pointer; font-weight: 900;" onclick="showTextModelInfo()">i</button>
+                        <button style="border: none; border-radius: 30px;  width: 20px; height: 20px; cursor:pointer; font-weight: 900;" onclick="showTextModelInfo()">i</button>
                     </div>
-                    <select id="model-options">
-                        <optgroup id="pollinationsAI" label="PollinationsAI"> 
-                            <option value="openai">OpenAI GPT-4o-mini</option>
-                            <option value="openai-large">OpenAI GPT-4o</option>
-                            <option value="openai-reasoning">OpenAI o1-mini</option>
-                            <option value="qwen-coder">Qwen 2.5 Coder 32B</option>
-                            <option value="llama">Llama 3.3 70B</option>
-                            <option value="mistral">Mistral Nemo</option>
-                            <option value="unity">Unity with Mistral Large by Unity AI Lab</option>
-                            <option value="midijourney">Midijourney musical transformer</option>
-                            <option value="rtist">Rtist image generator by @bqrio</option>
-                            <option value="searchgpt">SearchGPT with realtime news and web search</option>
-                            <option value="deepseek">DeepSeek-V3</option>
-                            <option value="claude-hybridspace">Claude Hybridspace</option>
-                            <option value="deepseek-r1">DeepSeek-R1 Distill Qwen 32B</option>
-                            <option value="deepseek-reasoner">DeepSeek R1 - Full</option>
-                            <option value="llamalight">Llama 3.1 8B Instruct</option>
-                            <option value="llamaguard">Llamaguard 7B AWQ</option>
-                            <option value="gemini">Gemini 2.0 Flash</option>
-                            <option value="gemini-thinking">Gemini 2.0 Flash Thinking</option>
-                            <option value="hormoz">Hormoz 8b by Muhammadreza Haghiri</option>
-                            <option value="hypnosis-tracy">Hypnosis Tracy - Your Self-Help AI</option>
-                            <option value="sur">Sur AI Assistant</option>
-                            <option value="sur-mistral">Sur AI Assistant (Mistral)</option>
-                            <option value="llama-scaleway">Llama (Scaleway)</option>
+                    <select id="model-options" name="ai-model" aria-label="Select AI Model" required>
+                        <optgroup id="pollinationsAI" label="PollinationsAI">
+                            <option value="" disabled selected>Choose an AI Model</option>
+                            <optgroup label="Large Language Models">
+                                <option value="openai">OpenAI GPT-4o-mini</option>
+                                <option value="openai-large">OpenAI GPT-4o</option>
+                                <option value="openai-reasoning">OpenAI o1-mini</option>
+                                <option value="qwen-coder">Qwen 2.5 Coder 32B</option>
+                                <option value="llama">Llama 3.3 70B</option>
+                                <option value="mistral">Mistral Nemo</option>
+                                <option value="llamalight">Llama 3.1 8B Instruct</option>
+                                <option value="llamaguard">Llamaguard 7B AWQ</option>
+                                <option value="deepseek">DeepSeek-V3</option>
+                                <option value="deepseek-r1">DeepSeek-R1 Distill Qwen 32B</option>
+                                <option value="deepseek-reasoner">DeepSeek R1 - Full</option>
+                            </optgroup>
+                            <optgroup label="Specialized AI">
+                                <option value="claude-hybridspace">Claude Hybridspace</option>
+                                <option value="unity">Unity with Mistral Large by Unity AI Lab</option>
+                                <option value="gemini">Gemini 2.0 Flash</option>
+                                <option value="gemini-thinking">Gemini 2.0 Flash Thinking</option>
+                                <option value="hypnosis-tracy">Hypnosis Tracy - Your Self-Help AI</option>
+                            </optgroup>
+                            <optgroup label="Creative & Search">
+                                <option value="midijourney">Midijourney musical transformer</option>
+                                <option value="rtist">Rtist image generator by @bqrio</option>
+                                <option value="searchgpt">SearchGPT with realtime news and web search</option>
+                            </optgroup>
+                            <optgroup label="Community & Experimental">
+                                <option value="hormoz">Hormoz 8b by Muhammadreza Haghiri</option>
+                                <option value="sur">Sur AI Assistant</option>
+                                <option value="sur-mistral">Sur AI Assistant (Mistral)</option>
+                                <option value="llama-scaleway">Llama (Scaleway)</option>
+                            </optgroup>
                         </optgroup>
                     </select>
                     <button id="regenerate-title-btn" onclick="generateTitle()">Regenerate Title</button>
