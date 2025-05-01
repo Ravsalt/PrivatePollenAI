@@ -65,7 +65,16 @@
                         <h3 style="flex-grow:1; text-align: center; position: relative; left:15px;">Choose Text Model</h3>
                         <button style="border: none; border-radius: 30px;  width: 20px; height: 20px; cursor:pointer; font-weight: 900;" onclick="showTextModelInfo()">i</button>
                     </div>
-                    <select id="model-options" name="ai-model" aria-label="Select AI Model" required>
+                    <select id="model-options" 
+                            name="ai-model" 
+                            aria-label="Select AI Model" 
+                            data-testid="ai-model-selector"
+                            data-analytics-event="model_selection"
+                            autocomplete="off"
+                            required 
+                            class="model-selector-dropdown"
+                            onchange="validateModelSelection(this)"
+                            title="Choose an AI model for text generation">
                         <optgroup id="pollinationsAI" label="PollinationsAI">
                             <option value="" disabled selected>Choose an AI Model</option>
                             <optgroup label="Large Language Models">
