@@ -192,6 +192,44 @@ html {
     color: white;
 }
 
+.privacy-note {
+    font-size: 0.8rem;
+    color: #e0e0e0;
+    background-color: rgba(255, 165, 0, 0.05);
+    border-left: 3px solid orange;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    text-align: center;
+    line-height: 1.4;
+}
+
+.popup-actions button, .primary-button {
+    background: linear-gradient(135deg, #00d0ff, rgb(195, 0, 230));
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.popup-actions button:hover, .primary-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0,0,0,0.2);
+}
+
+.popup-actions button:active, .primary-button:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
 #model-options, #config-model-options, #image-ratio-options {
     width: 500px;
     height: 30px;
@@ -522,11 +560,12 @@ html {
 }
 
 .commands-container {
-    width: 600px;
-    height:300px;
+    width: 100%;
+    max-width: 600px;
     padding: 30px;
-    display:flex;
+    display: flex;
     flex-direction: column;
+    gap: 15px;
     color:white;
     border-radius: 20px;
     background-color: hsl(0, 0%, 17%);
@@ -562,6 +601,22 @@ html {
     outline:none;
 }
 
+.model-settings {
+    background-color: rgba(26, 26, 26, 0.9);
+    border: none;
+    border-radius: 15px;
+    max-width: 90%;
+    width: 600px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    overflow: auto;
+}
+
+.model-settings .model {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
 
 /* GENERAL EFFECTS */
 .gradient-text {
