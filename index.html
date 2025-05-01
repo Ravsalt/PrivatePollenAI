@@ -4,31 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PrivatePollenAI</title>
-    <link rel="stylesheet" href="./chat.css" media="all">
-    <link rel="preload" href="./chat.js" as="script">
-    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
-    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
-    <link rel="dns-prefetch" href="https://unpkg.com">
-    
-    <!-- External Libraries -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.3.4/purify.min.js" crossorigin="anonymous" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js" crossorigin="anonymous" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/marked-footnote/dist/index.umd.min.js" crossorigin="anonymous" defer></script>
+    <link rel="stylesheet" href="./chat.css">
+    <!-- DOM PURIFY -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.3.4/purify.min.js" crossorigin="anonymous"></script>
+    <!-- MARKED SCRIPTS -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked-footnote/dist/index.umd.min.js" crossorigin="anonymous"></script>
+    <!-- HIGHLIGHTING -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github-dark.min.css" crossorigin="anonymous">
-    <script src="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/highlight.min.js" crossorigin="anonymous" defer></script>
+    <script src="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/highlight.min.js" crossorigin="anonymous"></script>  
+    <!-- KATEX -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.css" integrity="sha384-zh0CIslj+VczCZtlzBcjt5ppRcsAmDnRem7ESsYwWwg3m/OaJ2l4x7YBZl9Kxxib" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.js" integrity="sha384-Rma6DA2IPUwhNxmrB/7S3Tno0YY7sFu9WSYMCuulLhIqYSGZ2gKCJWIqhBWqMQfh" crossorigin="anonymous" defer></script>
-    
-    <!-- Favicons -->
-    <link rel="icon" href="./images/favicon.svg" type="image/svg+xml">
-    <link rel="alternate icon" href="./images/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="./images/apple-touch-icon.png">
-    <link rel="manifest" href="./images/site.webmanifest">
-    
-    <!-- Metadata -->
-    <meta name="application-name" content="PrivatePollenAI">
-    
-    <!-- Analytics -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.js" integrity="sha384-Rma6DA2IPUwhNxmrB/7S3Tno0YY7sFu9WSYMCuulLhIqYSGZ2gKCJWIqhBWqMQfh" crossorigin="anonymous"></script>
+    <!-- FAVICON(S) -->
+    <link rel="icon" type="image/png" href="./images/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="./images/favicon.svg" />
+    <link rel="shortcut icon" href="./images/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./images/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="PrivatePollenAI" />
+    <link rel="manifest" href="./images/site.webmanifest"/>
+    <!-- Google Analytics Script -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-LQB8FBSQQ2"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -38,24 +33,24 @@
     </script>
 </head>
 <body>
-    <main class="main">
-        <section class="chat" aria-label="Chat Area"></section>
-        <section class="message-box">
-            <textarea id="message" placeholder="Type your message here..." rows="1"></textarea>
+    <div class="main">
+        <div class="chat"></div>
+        <div class="message-box">
+            <textarea id="message" placeholder="Type your message here..."></textarea>
             <div class="message-bottom">
-                <div class="message-controls">
-                    <label id="displayModel" for="model-options" class="sr-only">Selected Model</label>
-                    <button class="settings-logo" aria-label="Open Settings">
-                        <img src="./images/settings.svg" alt="Settings" width="30" height="30">
+                <div style="display:flex;justify-content: center;align-items: center;">
+                    <label id="displayModel" for="model-options"></label>
+                    <button class="settings-logo">
+                        <image width="30" height="30" src="./images/settings.svg"></image>
                     </button>
-                    <button class="commands-btn" onclick="commandsPopup()" aria-label="Show Commands">Commands</button>
+                    <div class="commands-btn" onclick="commandsPopup()">Commands</div>
                 </div>
-                <button class="send-message-btn" aria-label="Send Message">
-                    <img src="./images/send.svg" alt="Send" width="30" height="30">
+                <button class="send-message-btn">
+                    <img style="height:30px; width:30px;" src="./images/send.svg"></img>
                 </button>
             </div>
-        </section>
-    </main>
+        </div>
+    </div>
     <!-- POPUPS -->
     <dialog class="model-settings">
         <div class="model">
